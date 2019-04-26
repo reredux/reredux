@@ -1,0 +1,34 @@
+{
+  "name": "reredux",
+  "version": "0.0.1",
+  "description": "ReRedux",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublish": "coffee --transpile -o lib -c src",
+    "test": "coffee ./test/index.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reredux/reredux.git"
+  },
+  "keywords": [
+    "redux"
+  ],
+  "author": "Victor Sych",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reredux/reredux/issues"
+  },
+  "homepage": "https://github.com/reredux/reredux#readme",
+  "peerDependencies": {
+    "react-redux": "^6.0.1"
+  },
+  "devDependencies": {
+    "coffee-register": "^2.2.0",
+    "coffeescript": "^2.4.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1"
+  }
+}
