@@ -1,5 +1,5 @@
 {
-  "name": "reredux",
+  "name": "@reredux/reredux",
   "version": "0.0.1",
   "description": "ReRedux",
   "main": "lib/index.js",
