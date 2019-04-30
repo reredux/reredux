@@ -28,7 +28,8 @@ connectReduxStore = (reduxStore) ->
 
 rootReducer = (next) -> (state, action) ->
   unless action.type.indexOf('reredux') is 0
-    return next?(state, action) || state || {}
+    nextState = next?(state, action) || {}
+    return {...state, ...nextState}
 
   [storeName, actionName] = action.type.split('.').splice 1
   logger(storeName, actionName, action.args)
