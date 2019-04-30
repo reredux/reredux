@@ -24,6 +24,7 @@
     "react-redux": "^6.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
     "coffee-register": "^2.2.0",
     "coffeescript": "^2.4.1",
     "react": "^16.8.6",
