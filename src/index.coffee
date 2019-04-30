@@ -26,16 +26,16 @@ connectReduxStore = (reduxStore) ->
     store.mutations.reset()
   reduxStore
 
-rootReducer = (next) -> (state, {type, args}) ->
-  unless type.indexOf('reredux') is 0
+rootReducer = (next) -> (state, action) ->
+  unless action.type.indexOf('reredux') is 0
     return next?(state, action) || state || {}
 
-  [storeName, actionName] = type.split('.').splice 1
-  logger(storeName, actionName, args)
+  [storeName, actionName] = action.type.split('.').splice 1
+  logger(storeName, actionName, action.args)
   reducer = stores[storeName].reducers[actionName]
   storeState = state[storeName]
 
-  {...state, "#{storeName}": reducer(mutator(storeState), args...)}
+  {...state, "#{storeName}": reducer(mutator(storeState), action.args...)}
 
 createStore = (name, initialState) ->
   store = stores[name] =
